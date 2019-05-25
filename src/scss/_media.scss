@@ -23,10 +23,8 @@
       font-size: 19px;
     }
   }
-  .projects {
-    img {
-      width: 70%;
-    }
+  .projects-container-row {
+    width: 70%;
   }
   .contactUs {
     width: 500px;
@@ -35,25 +33,25 @@
 
 @media (min-width: 1000px) {
   .projects {
-    a {
-      width: 40%;
-      margin: 0 5px;
-    }
-    img {
-      width: 100%;
-    }
-    &-title {
-      p {
-        margin: 20px 0;
-      }
-    }
     &-container {
       display: flex;
       justify-content: center;
       flex-wrap: wrap;
       align-items: center;
-      width: 70%;
+      width: 950px;
       margin: 0 auto;
+      &-row {
+        width: 40%;
+        img {
+          width: 100%;
+          margin: 0 5px;
+        }
+        &-title {
+          p {
+            margin: 20px 0;
+          }
+        }
+      }
     }
   }
 }
@@ -70,10 +68,8 @@
 }
 
 @media (min-width: 1250px) {
-  .projects {
-    a {
-      width: 450px;
-    }
+  .projects-container-row {
+    width: 450px;
   }
 }
 

@@ -235,8 +235,6 @@ h3 {
   margin: 20px auto;
   padding: 20px;
   background-color: rgb(240, 240, 240);
-  position: relative;
-  left: -1800px;
 }
 .servicesContainer h2 {
   color: black;
@@ -253,11 +251,7 @@ h3 {
   transform: scale(1.01);
   background: white;
 }
-@keyframes slide {
-  100% {
-    left: 0;
-  }
-}
+
 @media (min-width: 769px) {
   .servicesHeading {
     width: 100%;
@@ -557,15 +551,16 @@ fieldset {
   Footer
 ==================================== */
 footer {
-  background: #2b2b2b;
+  background: rgb(255, 255, 255);
+  border-top: 2px solid black;
   padding: 30px;
 }
 .copyright {
-  color: rgb(180, 180, 180);
+  color: black;
   text-align: center;
   width: 100%;
   line-height: 1;
 }
 .copyright a {
-  color: white;
+  color: rgb(5, 0, 78);
 }
