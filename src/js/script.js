@@ -61,6 +61,8 @@ about.style.display = 'none';
 servicesImg.style.display = 'none';
 for (let i = 0; i < leftProject.length; i++) {
   leftProject[i].style.display = 'none';
+}
+for (let i = 0; i < rightProject.length; i++) {
   rightProject[i].style.display = 'none';
 }
 
@@ -78,6 +80,9 @@ window.addEventListener('scroll', () => {
   if (window.pageYOffset > 1000) {
     for (let i = 0; i < leftProject.length; i++) {
       leftProject[i].style.display = '';
+    }
+
+    for (let i = 0; i < rightProject.length; i++) {
       rightProject[i].style.display = '';
     }
     projectsTitle.style.animation = '1s ease-in-out up forwards';
@@ -85,6 +90,7 @@ window.addEventListener('scroll', () => {
     rightProject[0].style.animation = '1s .25s ease-in-out forwards slideRight';
     leftProject[1].style.animation = '1s .5s ease-in-out forwards slideLeft';
     rightProject[1].style.animation = '1s .75s ease-in-out forwards slideRight';
+    leftProject[2].style.animation = '1s 1s ease-in-out forwards slideLeft';
   }
   if (window.pageYOffset > 1900) {
     if (!programRan) {

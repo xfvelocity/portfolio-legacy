@@ -26,28 +26,7 @@ p {
   padding: 200px;
   cursor: default;
 }
-/* ================================= 
-  Notice
-==================================== */
-.notice {
-  text-align: center;
-  background-color: #555;
-  padding: 10px;
-  color: white;
-}
-.notice > p {
-  color: white;
-  width: 80%;
-  margin: 0 auto;
-  padding: 5px;
-}
-.notice .return {
-  margin: 0 10px;
-  color: white;
-}
-.notice i:hover {
-  opacity: 0.6;
-}
+
 /* ================================= 
   Navigation Bar
 ==================================== */
