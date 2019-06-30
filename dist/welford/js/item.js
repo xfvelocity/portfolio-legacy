@@ -1,0 +1,1 @@
+const quantity=document.getElementById("value"),plus=document.getElementById("plus"),minus=document.getElementById("minus");let value=parseInt(quantity.value);plus.addEventListener("click",()=>{value+=1,quantity.value=value}),minus.addEventListener("click",()=>{value-=1,quantity.value=value});
