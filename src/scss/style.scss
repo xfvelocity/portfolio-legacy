@@ -6,8 +6,7 @@ header {
     url('../img/background.jpg');
   height: 100vh;
   @include image;
-  display: flex;
-  align-items: center;
+  @include flex;
   justify-content: center;
 
   .header-text {
@@ -44,13 +43,16 @@ header {
       }
     }
   }
+
   #img {
     text-align: center;
+
     img {
       color: white;
       position: relative;
       top: 30vh;
       width: 80px;
+
       &:hover {
         transition: 0.5s ease;
         opacity: 0.4;
@@ -74,9 +76,11 @@ header {
     color: $secondary-color;
     font-size: 28px;
   }
+
   p {
     color: rgb(82, 82, 82);
   }
+
   a {
     text-decoration: none;
 
@@ -86,8 +90,10 @@ header {
       color: $secondary-color;
     }
   }
+
   .cv {
     color: rgb(160, 160, 160);
+
     i {
       color: rgb(102, 102, 102);
       margin: 3px;
@@ -101,6 +107,7 @@ header {
   @include image;
   padding: 50px 10px 80px 10px;
   margin: 70px 0;
+
   &-img {
     display: flex;
     justify-content: center;
@@ -110,6 +117,7 @@ header {
     opacity: 0;
     position: relative;
     top: 80px;
+
     //*
     img {
       width: 60px;
@@ -117,6 +125,7 @@ header {
       margin: 5px;
     }
   }
+
   p {
     //* Animation
     opacity: 0;
@@ -138,9 +147,11 @@ fieldset {
   padding: 20px 0;
   margin-top: 40px;
 }
+
 .contactUs {
   width: 65%;
   margin: 0 auto;
+
   input,
   textarea {
     border: 0;
@@ -150,16 +161,19 @@ fieldset {
     width: 100%;
     border-radius: 7px;
   }
+
   textarea {
     height: 160px;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   }
+
   input[type='submit'] {
     background: darken($secondary-color, 5);
     font-size: 18px;
     cursor: pointer;
     color: white;
     font-weight: 600;
+
     &:hover {
       opacity: 0.7;
       transition: 0.7s ease;
