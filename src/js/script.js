@@ -90,7 +90,6 @@ window.addEventListener('scroll', () => {
     rightProject[0].style.animation = '1s .25s ease-in-out forwards slideRight';
     leftProject[1].style.animation = '1s .5s ease-in-out forwards slideLeft';
     rightProject[1].style.animation = '1s .75s ease-in-out forwards slideRight';
-    leftProject[2].style.animation = '1s 1s ease-in-out forwards slideLeft';
   }
   if (window.pageYOffset > 1900) {
     if (!programRan) {
