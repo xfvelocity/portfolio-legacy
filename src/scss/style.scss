@@ -3,7 +3,7 @@
 
 header {
   background: linear-gradient(rgba(58, 58, 58, 0.9), rgba(58, 58, 58, 0.9)),
-    url('../img/background.webp');
+    url('../img/background.png');
   height: 100vh;
   @include image;
   @include flex;
@@ -103,7 +103,7 @@ header {
 
 .services {
   background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
-    url('../img/servicesBackground.webp');
+    url('../img/servicesBackground.png');
   @include image;
   padding: 50px 10px 80px 10px;
   margin: 70px 0;
