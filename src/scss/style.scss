@@ -41,6 +41,10 @@ header {
         transition: 1s ease-out;
         color: $secondary-color;
       }
+
+      img {
+        width: 1.5rem;
+      }
     }
   }
 
@@ -94,9 +98,9 @@ header {
   .cv {
     color: rgb(160, 160, 160);
 
-    i {
-      color: rgb(102, 102, 102);
-      margin: 3px;
+    img {
+      margin-left: 3px;
+      width: 15px;
     }
   }
 }
@@ -105,14 +109,14 @@ header {
   background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
     url('../img/servicesBackground.png');
   @include image;
-  padding: 50px 10px 80px 10px;
+  padding: 10px;
   margin: 70px 0;
 
   &-img {
     display: flex;
     justify-content: center;
     align-items: center;
-    margin: 20px;
+    margin: 5px;
     //* Animation
     opacity: 0;
     position: relative;
@@ -120,21 +124,31 @@ header {
 
     //*
     img {
-      width: 60px;
-      height: 60px;
+      width: 260px;
+      height: 260px;
       margin: 5px;
     }
   }
 
-  p {
+  &-list {
     //* Animation
     opacity: 0;
     position: relative;
     top: 80px;
     //*
+    display: none;
+    justify-content: center;
     color: white;
-    @include text;
     font-size: 17px;
+
+    ul {
+    display: inline-block;
+    line-height: 2.3;
+    letter-spacing: 2px;
+    padding: 0;
+    list-style: none;
+    margin: 0 20px;
+    }
   }
 }
 

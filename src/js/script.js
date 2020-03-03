@@ -37,7 +37,7 @@ projectTitle.addEventListener('click', e => {
 //* Animations
 const about = document.querySelector('.about');
 const servicesImg = document.querySelector('.services-img');
-const servicesText = document.querySelector('.services p');
+const servicesText = document.querySelector('.services-list');
 const projectsTitle = document.querySelector('.projects-title h2');
 const leftProject = document.querySelectorAll('.left');
 const rightProject = document.querySelectorAll('.right');

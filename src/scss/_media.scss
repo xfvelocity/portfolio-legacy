@@ -13,14 +13,18 @@
     text-align: left;
   }
   .services {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
     img {
-      width: 80px;
-      height: 80px;
+      width: 280px;
+      height: 280px;
     }
-    p {
-      width: 500px;
-      margin: 30px auto;
-      font-size: 19px;
+    &-list {
+      display: flex;
+      margin-left: 50px;
+      font-size: 20px;
     }
   }
   .projects-container-row {
