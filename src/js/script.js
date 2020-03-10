@@ -1,39 +1,3 @@
-const projectTitle = document.querySelector('.projects-title p');
-const all = document.querySelectorAll('.all');
-const js = document.querySelectorAll('.javascript');
-const web = document.querySelectorAll('.websites');
-
-//* Determines what it display by the parameters it is passed
-const projects = (area1, area2) => {
-  area1.forEach(element => {
-    element.style.display = '';
-  });
-  area2.forEach(element => {
-    element.style.display = 'none';
-  });
-};
-
-projectTitle.addEventListener('click', e => {
-  const buttonPress = e.target;
-  const current = document.querySelector('.current');
-  if (current.classList == 'current') {
-    current.classList.remove('current');
-  }
-  buttonPress.classList.add('current');
-  if (buttonPress.innerHTML == 'PROJECTS') {
-    projects(js, web); //* js displayed, web not displayed
-  } else if (buttonPress.innerHTML == 'WEBSITES') {
-    projects(web, js);
-  } else if (buttonPress.innerHTML == 'ALL') {
-    js.forEach(element => {
-      element.style.display = '';
-    });
-    web.forEach(element => {
-      element.style.display = '';
-    });
-  }
-});
-
 //* Animations
 const about = document.querySelector('.about');
 const servicesImg = document.querySelector('.services-img');

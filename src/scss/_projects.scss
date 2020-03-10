@@ -5,9 +5,10 @@
   }
   &-title {
     text-align: center;
+    margin: 30px 0;
     h2 {
       border-bottom: 2px solid $secondary-color;
-      width: 120px;
+      width: 130px;
       padding-bottom: 4px;
       margin: 0 auto;
       //* Animation
@@ -15,23 +16,6 @@
       opacity: 0;
       top: -160px;
       //*
-    }
-    p {
-      color: rgb(85, 85, 85);
-      text-decoration: none;
-      margin: 10px 0 30px 0;
-      span {
-        margin: 5px;
-        padding: 15px;
-        cursor: pointer;
-        &:hover {
-          font-weight: 500;
-        }
-      }
-    }
-    .current {
-      font-weight: 500;
-      color: black;
     }
   }
   &-container {
@@ -41,18 +25,19 @@
     &-row {
       width: 90%;
       margin: 10px auto;
+
       img {
-        position: relative;
-        width: 100%;
-        background: rgb(218, 218, 218);
-        padding: 5px;
-        border-radius: 10px;
-      }
-      &:hover {
-        opacity: 0.8;
-        transform: scale(1.01);
-        transition: 0.5s ease;
-      }
+          position: relative;
+          width: 100%;
+          padding: 5px;
+          border-radius: 10px;
+          background: rgb(218, 218, 218);
+        }
+        &:hover {
+          opacity: 0.8;
+          transform: scale(1.01);
+          transition: 0.5s ease;
+        }
     }
     .left {
       opacity: 0;
@@ -93,18 +78,20 @@
     margin: 5px 0;
     padding: 10px 5px;
     border-radius: 10px;
+
+    @include flex;
+    justify-content: center;
     &:hover {
-      opacity: 0.8;
-      background: white;
-      color: black;
+      background: darken($secondary-color, 25%);
       transition: 0.5s ease-in;
     }
-  }
-  i {
-    font-size: 14px;
+    img {
+      width: 1.5rem;
+      background: none;
+    }
   }
 }
 
 .projects-container-row:hover .overlay {
-  opacity: 0.9;
+  opacity: .95;
 }

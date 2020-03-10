@@ -34,16 +34,15 @@ header {
     font-size: 24px;
 
     a {
-      color: rgb(35, 35, 35);
       margin: 3px;
-
-      &:hover {
-        transition: 1s ease-out;
-        color: $secondary-color;
-      }
 
       img {
         width: 1.5rem;
+
+          &:hover {
+            transition: 1s ease-out;
+            opacity: 0.6;
+          }
       }
     }
   }
@@ -54,8 +53,8 @@ header {
     img {
       color: white;
       position: relative;
-      top: 30vh;
-      width: 80px;
+      top: 27vh;
+      width: 1rem;
 
       &:hover {
         transition: 0.5s ease;
@@ -109,7 +108,7 @@ header {
   background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
     url('../img/servicesBackground.png');
   @include image;
-  padding: 10px;
+  padding: 30px 10px;
   margin: 70px 0;
 
   &-img {
@@ -173,12 +172,12 @@ fieldset {
     margin: 5px 0;
     padding: 15px;
     width: 100%;
-    border-radius: 7px;
+    border-radius: 4px;
   }
 
   textarea {
     height: 160px;
-    wfont-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   }
 
   input[type='submit'] {
