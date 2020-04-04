@@ -49,6 +49,9 @@
       position: relative;
       right: -1600px;
     }
+    .disabled {
+      cursor: default;
+    }
   }
   p {
     text-align: center;
@@ -95,3 +98,10 @@
 .projects-container-row:hover .overlay {
   opacity: .95;
 }
+.disabled:hover .overlay {
+  display: none;
+}
+.disabled:hover {
+  transform: scale(1);
+}
+
