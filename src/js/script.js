@@ -7,19 +7,19 @@ const leftProject = document.querySelectorAll('.left');
 const rightProject = document.querySelectorAll('.right');
 
 //* Type out a message Animation
-let t = 0;
-const message = 'SEND A MESSAGE';
-const contactTitle = document.querySelector('.contactTitle h2');
-let programRan = false;
+// let t = 0;
+// const message = 'SEND A MESSAGE';
+// const contactTitle = document.querySelector('.contactTitle h2');
+// let programRan = false;
 
-const typeWriter = type => {
-  if (t < type.length) {
-    contactTitle.innerHTML += type.charAt(t);
-    t++;
-    setTimeout(typeWriter, 40, type);
-    programRan = true;
-  }
-};
+// const typeWriter = type => {
+//   if (t < type.length) {
+//     contactTitle.innerHTML += type.charAt(t);
+//     t++;
+//     setTimeout(typeWriter, 40, type);
+//     programRan = true;
+//   }
+// };
 
 about.style.display = 'none';
 servicesImg.style.display = 'none';
