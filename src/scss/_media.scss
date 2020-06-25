@@ -1,4 +1,4 @@
-@media (min-width: 769px) {
+@media (min-width: 768px) {
   header {
     .header-text {
       text-align: left;
@@ -26,9 +26,6 @@
       margin-left: 50px;
       font-size: 20px;
     }
-  }
-  .projects-container-row {
-    width: 70%;
   }
   .contactUs {
     max-width: 400px;
@@ -63,11 +60,14 @@
 @media (min-width: 1150px) {
   header {
     .header-text {
-      width: 700px;
+      width: 800px;
     }
   }
   .about {
-    width: 700px;
+    width: 800px;
+    p {
+      width: 90%;
+    }
   }
 }
 

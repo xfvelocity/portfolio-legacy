@@ -37,101 +37,109 @@
 
     <a id="about"></a>
     <!-- Destination for the scroll down icon -->
-    <div class="about">
-      <h2>ABOUT</h2>
-      <p>
-        I'm Alex, an aspiring self-taught developer who has a love for web
-        development which is fueled by creating and troubleshooting code. My
-        goal is to become a Full Stack Developer in the near future.
-      </p>
-      <br />
-      <a href="cv.pdf">
-        <p class="cv">
-          CV / Resume
-          <img src="img/download-icon.svg" alt="">
+    <section class="aboutSection">
+      <div class="about">
+        <h2>ABOUT</h2>
+        <p>
+          I'm Alex, an aspiring self-taught developer who has a love for web
+          development which is fueled by creating and troubleshooting code. My
+          goal is to become a Full Stack Developer in the near future.
         </p>
-      </a>
-    </div>
+        <br />
+        <a href="cv.pdf">
+          <p class="cv">
+            CV / Resume
+            <img src="img/download-icon.svg" alt="">
+          </p>
+        </a>
+      </div>
+    </section>
 
     <!------- Services ---------->
-
-    <div class="services">
-      <div class="services-img">
-        <img src="img/technologies.svg" alt="">
+    <section class="servicesSection">
+      <div class="services">
+        <div class="services-img">
+          <img src="img/technologies.svg" alt="">
+        </div>
+        <div class="services-list">
+          <ul>
+            <li>HTML / CSS</li>
+            <li>JavaScript</li>
+            <li>Svelte</li>
+          </ul>
+          <ul>
+            <li>Node.js</li>
+            <li>Express</li>
+            <li>MongoDB</li>
+          </ul>
+        </div>
       </div>
-      <div class="services-list">
-      <ul>
-        <li>HTML / CSS</li>
-        <li>JavaScript</li>
-        <li>Svelte</li>
-      </ul>
-      <ul>
-        <li>Node.js</li>
-        <li>Express</li>
-        <li>MongoDB</li>
-      </ul>
-    </div>
-    </div>
+    </section>
 
-    <div class="projects">
-      <div class="projects-title">
-        <a id="project">.</a>
-        <h2>PROJECTS</h2>
-      </div>
-
-      <!------- Build A-Dream ---------->
-      <div class="projects-container">
-        <div class="projects-container-row left">
-          <img src="img/build.png" alt="Build A-Dream website" />
-          <div class="overlay">
-            <a
-              target="_blank"
-              href="https://github.com/xfvelocity/build-a-dream"
-              >View Source <img src="img/document.svg" alt="">
-            <a href="https://builda-dream.com/"
-              >Live Demo <img src="img/next-arrow.svg" alt=""></a>
+    <section class="projectSection">
+      <div class="projects">
+        <div class="left project">
+          <div class="project-img">
+            <a href="https://builda-dream.com/">
+              <img src="img/build.png" alt="">
+            </a>
+          </div>
+          <div class="project-text">
+            <h4>Featured Website</h4>
+            <h2>Build A-Dream</h2>
+            <p>Landscaping website made for a family member to promote their business and show off pictures of their work. Recently converted to use Svelte.</p>
+            <a href="https://github.com/xfvelocity/build-a-dream"><img src="img/github-icon.svg" alt="GitHub"></a>
+            <a href="https://builda-dream.com/"><img src="img/external.svg" alt="Visit website"></a>
           </div>
         </div>
-
-        <!------- HostingSolutions ---------->
-        <div class="projects-container-row right">
-          <img src="img/hostingsolutions.png" alt="Hosting Solutions website" />
-          <div class="overlay">
-            <a
-              target="_blank"
-              href=""
-              >View Source <img src="img/document.svg" alt=""></a>
-            <a href="/hostingsolutions"
-              >Live Demo <img src="img/next-arrow.svg" alt=""></a>
+        <div class="grey">
+          <div class="right project">
+            <div class="grey-img project-img">
+              <a href="https://alex-long.co.uk/rps/index.html">
+                <img src="img/rock-paper-scissors.png" alt="">
+              </a>
+            </div>
+            <div class="project-text">
+              <h4>Featured Project</h4>
+              <h2>Rock, Paper, Scissors</h2>
+              <p>A simple rock paper scissors game made using vanilla JavaScript as a project to help me learn the fundamentals, not fully functional. </p>
+              <a href="https://github.com/xfvelocity/rock-paper-scissors"><img src="img/github-icon.svg" alt="GitHub"></a>
+              <a href="https://alex-long.co.uk/rps/index.html"><img src="img/external.svg" alt="Visit website"></a>
+            </div>
           </div>
         </div>
-
-      <!------- Rock Paper Scissors ---------->
-      <div class="projects-container-row left">
-        <img src="img/rock-paper-scissors.png" alt="Rock Paper Scissors project" />
-        <div class="overlay">
-          <a target="_blank" href="https://github.com/xfvelocity/rock-paper-scissors"
-            >View Source <img src="img/document.svg" alt=""></a>
-          <a href="rps/index.html"
-            >Live Demo <img src="img/next-arrow.svg" alt=""></a>
+        <div class="left project">
+          <div class="project-img">
+            <a href="https://alex-long.co.uk/hostingsolutions">
+              <img src="img/hostingsolutions.png" alt="">
+            </a>
+          </div>
+          <div class="project-text">
+            <h4>Featured Website</h4>
+            <h2>HostingSolutions</h2>
+            <p>Recently made website to show off my ability at the framework Svelte. Made to replace the original version which can still be viewed on the website.</p>
+            <a href="https://github.com/xfvelocity/hosting-solutions"><img src="img/github-icon.svg" alt="GitHub"></a>
+            <a href="https://alex-long.co.uk/hostingsolutions"><img src="img/external.svg" alt="Visit website"></a>
+          </div>
         </div>
-      </div>
-
-        <!------- Spongebob Quiz ---------->
-        <div class="projects-container-row right">
-          <img src="img/spongebob.png" alt="Spongebob Quiz project" />
-          <div class="overlay">
-            <a target="_blank" href="https://github.com/xfvelocity/react-quiz"
-              >View Source <img src="img/document.svg" alt=""></a>
-            <a href="quiz/index.html"
-              >Live Demo <img src="img/next-arrow.svg" alt=""></a>
+        <div class="grey">
+          <div class="right project">
+            <div class="grey-img project-img">
+              <a href="https://alex-long.co.uk/quiz/index.html">
+                <img src="img/spongebob.png" alt="">
+              </a>
+            </div>
+            <div class="project-text">
+              <h4>Featured Project</h4>
+              <h2>Spongebob Quiz</h2>
+              <p>An example of one of the projects I created using React, after originally creating it in JavaScript. Slightly outdated and not fully functional.</p>
+              <a href="https://github.com/xfvelocity/react-quiz"><img src="img/github-icon.svg" alt="GitHub"></a>
+              <a href="https://alex-long.co.uk/quiz/index.html"><img src="img/external.svg" alt="Visit website"></a>
+            </div>
           </div>
         </div>
       </div>
-      <p>
-        <em>* Currently working on these, so they may not work as intended</em>
-      </p>
-    </div>
+    </section>
 
     <!-- ----- Contact us --------
 
