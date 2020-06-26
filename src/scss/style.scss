@@ -48,28 +48,14 @@ header {
     }
   }
 
-  #img {
-    text-align: center;
-
-    img {
-      color: white;
-      position: relative;
-      top: 27vh;
-      width: 1rem;
-
-      &:hover {
-        transition: 0.5s ease;
-        opacity: 0.4;
-      }
-    }
-  }
 }
 
 .about {
+  display: none;
   text-align: center;
   width: 85%;
   padding: 20px;
-  margin: 50px auto;
+  margin: 50px auto 10px auto;
 
   //* Animation
   position: relative;
@@ -110,10 +96,10 @@ header {
     url('../img/servicesBackground.png');
   @include image;
   padding: 30px 10px;
-  margin: 70px 0 0 0;
+  margin: 40px 0 0 0;
 
   &-img {
-    display: flex;
+    display: none;
     justify-content: center;
     align-items: center;
     margin: 5px;
@@ -121,7 +107,6 @@ header {
     opacity: 0;
     position: relative;
     top: 80px;
-
     //*
     img {
       width: 260px;
@@ -155,13 +140,9 @@ header {
 fieldset {
   border: 0;
 }
-
-.contactusColor {
-  background: rgb(245, 245, 245);
-  padding: 20px 0;
-  margin-top: 40px;
+.contact {
+  padding: 40px;
 }
-
 .contactUs {
   width: 65%;
   margin: 0 auto;
@@ -169,7 +150,7 @@ fieldset {
   input,
   textarea {
     border: 0;
-    background: rgb(219, 219, 219);
+    background: rgb(240, 240, 240);
     margin: 5px 0;
     padding: 15px;
     width: 100%;

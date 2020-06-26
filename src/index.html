@@ -27,16 +27,9 @@
             target="_blank"
             ><img class="svg-icon" src="img/linkedin-icon.svg" alt="Linkedin profile"></a>
         </div>
-        <div id="img">
-          <a href="#about"><img src="img/mouse-down.svg" alt=""/></a>
-        </div>
       </div>
     </header>
 
-    <!------- About ---------->
-
-    <a id="about"></a>
-    <!-- Destination for the scroll down icon -->
     <section class="aboutSection">
       <div class="about">
         <h2>ABOUT</h2>
@@ -55,7 +48,6 @@
       </div>
     </section>
 
-    <!------- Services ---------->
     <section class="servicesSection">
       <div class="services">
         <div class="services-img">
@@ -76,24 +68,25 @@
       </div>
     </section>
 
-    <section class="projectSection">
-      <div class="projects">
-        <div class="left project">
-          <div class="project-img">
-            <a href="https://builda-dream.com/">
-              <img src="img/build.png" alt="">
-            </a>
+    <div class="projects">
+      <section class="buildSection">
+          <div class="project buildadream">
+            <div class="project-img">
+              <a href="https://builda-dream.com/">
+                <img src="img/build.png" alt="">
+              </a>
+            </div>
+            <div class="project-text">
+              <h4>Featured Website</h4>
+              <h2>Build A-Dream</h2>
+              <p>Landscaping website made for a family member to promote their business and show off pictures of their work. Recently converted to use Svelte.</p>
+              <a href="https://github.com/xfvelocity/build-a-dream"><img src="img/github-icon.svg" alt="GitHub"></a>
+              <a href="https://builda-dream.com/"><img src="img/external.svg" alt="Visit website"></a>
+            </div>
           </div>
-          <div class="project-text">
-            <h4>Featured Website</h4>
-            <h2>Build A-Dream</h2>
-            <p>Landscaping website made for a family member to promote their business and show off pictures of their work. Recently converted to use Svelte.</p>
-            <a href="https://github.com/xfvelocity/build-a-dream"><img src="img/github-icon.svg" alt="GitHub"></a>
-            <a href="https://builda-dream.com/"><img src="img/external.svg" alt="Visit website"></a>
-          </div>
-        </div>
-        <div class="grey">
-          <div class="right project">
+        </section>
+        <section class="rpsSection grey">
+          <div class="project rps">
             <div class="grey-img project-img">
               <a href="https://alex-long.co.uk/rps/index.html">
                 <img src="img/rock-paper-scissors.png" alt="">
@@ -107,23 +100,25 @@
               <a href="https://alex-long.co.uk/rps/index.html"><img src="img/external.svg" alt="Visit website"></a>
             </div>
           </div>
-        </div>
-        <div class="left project">
-          <div class="project-img">
-            <a href="https://alex-long.co.uk/hostingsolutions">
-              <img src="img/hostingsolutions.png" alt="">
-            </a>
+        </section>
+        <section class="hostingSection">
+          <div class="project hosting">
+            <div class="project-img ">
+              <a href="https://alex-long.co.uk/hostingsolutions">
+                <img src="img/hostingsolutions.png" alt="">
+              </a>
+            </div>
+            <div class="project-text">
+              <h4>Featured Website</h4>
+              <h2>HostingSolutions</h2>
+              <p>Recently made website to show off my ability at the framework Svelte. Made to replace the original version which can still be viewed on the website.</p>
+              <a href="https://github.com/xfvelocity/hosting-solutions"><img src="img/github-icon.svg" alt="GitHub"></a>
+              <a href="https://alex-long.co.uk/hostingsolutions"><img src="img/external.svg" alt="Visit website"></a>
+            </div>
           </div>
-          <div class="project-text">
-            <h4>Featured Website</h4>
-            <h2>HostingSolutions</h2>
-            <p>Recently made website to show off my ability at the framework Svelte. Made to replace the original version which can still be viewed on the website.</p>
-            <a href="https://github.com/xfvelocity/hosting-solutions"><img src="img/github-icon.svg" alt="GitHub"></a>
-            <a href="https://alex-long.co.uk/hostingsolutions"><img src="img/external.svg" alt="Visit website"></a>
-          </div>
-        </div>
-        <div class="grey">
-          <div class="right project">
+        </section>
+        <section class="quizSection grey">
+          <div class="project quiz">
             <div class="grey-img project-img">
               <a href="https://alex-long.co.uk/quiz/index.html">
                 <img src="img/spongebob.png" alt="">
@@ -137,41 +132,39 @@
               <a href="https://alex-long.co.uk/quiz/index.html"><img src="img/external.svg" alt="Visit website"></a>
             </div>
           </div>
+      </section>
+    </div>
+    <section class="contactSection">
+      <div class="contact">
+        <div class="contactTitle">
+          <h2></h2>
+          <div class="contactUs">
+            <form
+              accept-charset="UTF-8"
+              action=""
+              method="POST"
+              class="contactusForm"
+            >
+              <fieldset>
+                <input placeholder="Name" type="text" name="Name" required disabled/>
+                <br />
+                <input placeholder="Email" type="text" name="Email" required disabled/>
+                <br />
+                <textarea
+                  placeholder="Message"
+                  type="text"
+                  name="Message"
+                  required
+                  disabled
+                ></textarea>
+                <br />
+                <p><input type="submit" value="SUBMIT" disabled/></p>
+              </fieldset>
+            </form>
+          </div>
         </div>
       </div>
     </section>
-
-    <!-- ----- Contact us --------
-
-    <div class="contactusColor">
-      <div class="contactTitle">
-        <h2></h2>
-        <div class="contactUs">
-          <form
-            accept-charset="UTF-8"
-            action="https://usebasin.com/f/5d041ec64531"
-            method="POST"
-            class="contactusForm"
-          >
-            <fieldset>
-              <input placeholder="Name" type="text" name="Name" required disabled/>
-              <br />
-              <input placeholder="Email" type="text" name="Email" required disabled/>
-              <br />
-              <textarea
-                placeholder="Message"
-                type="text"
-                name="Message"
-                required
-                disabled
-              ></textarea>
-              <br />
-              <p><input type="submit" value="SUBMIT" disabled/></p>
-            </fieldset>
-          </form>
-        </div>
-      </div>
-    </div> -->
 
     <script src="js/script.js"></script>
   </body>
