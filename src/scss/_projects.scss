@@ -20,7 +20,10 @@
     }
     &-text {
       margin-top: 20px;
-      h4 {
+      p:first-child {
+        margin: 0;
+      }
+      .project-subheading {
         color: $secondary-color;
       }
       a img {

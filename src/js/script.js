@@ -35,7 +35,7 @@ const observer = new IntersectionObserver((entries, observer) => {
       if(entry.target.classList.contains('servicesSection')) {
         servicesImg.style.display = 'flex';
         servicesImg.style.animation = '1s ease-in-out up forwards';
-        servicesText.style.animation = '1s .3s ease-in-out up forwards';
+        servicesText.style.animation = '1s ease-in-out up forwards';
       }
       if(entry.target.classList.contains('buildSection')) {
         buildadream.style.display = 'flex';
