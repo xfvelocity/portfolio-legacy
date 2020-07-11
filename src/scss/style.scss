@@ -144,8 +144,9 @@ fieldset {
   padding: 40px;
 }
 .contactUs {
-  width: 65%;
+  width: 95%;
   margin: 0 auto;
+  max-width: 400px;
 
   input,
   textarea {
