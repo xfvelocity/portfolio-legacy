@@ -20,150 +20,160 @@
           FRONT END <span class="secondary"><br />DEVELOPER</span>
         </h1>
         <div class="header-icons">
-          <a href="https://github.com/xfvelocity" target="_blank"
+          <a href="https://github.com/xfvelocity" target="_blank" rel="noreferrer"
             ><img class="svg-icon" src="img/github-icon.svg" alt="Github profile"></a>
           <a
             href="https://www.linkedin.com/in/alex-long-31339a15a/"
             target="_blank"
-            ><img class="svg-icon" src="img/linkedin-icon.svg" alt="Linkedin profile"></a>
-        </div>
-        <div id="img">
-          <a href="#about"><img src="img/mouse-down.svg" alt=""/></a>
+            rel="noreferrer" ><img class="svg-icon" src="img/linkedin-icon.svg" alt="Linkedin profile"></a>
         </div>
       </div>
     </header>
+    <main>
+      <section class="aboutSection" role="article">
+        <div class="about">
+          <h2>ABOUT</h2>
+          <p>
+            I'm Alex, an aspiring self-taught developer who has a love for web
+            development which is fueled by creating and troubleshooting code. My
+            goal is to become a Full Stack Developer in the near future.
+          </p>
+          <br />
+          <a href="cv.pdf">
+            <p class="cv">
+              CV / Resume
+              <img src="img/download-icon.svg" alt="">
+            </p>
+          </a>
+        </div>
+      </section>
 
-    <!------- About ---------->
-
-    <a id="about"></a>
-    <!-- Destination for the scroll down icon -->
-    <div class="about">
-      <h2>ABOUT</h2>
-      <p>
-        I'm Alex, an aspiring self-taught developer who has a love for web
-        development which is fueled by creating and troubleshooting code. My
-        goal is to become a Full Stack Developer in the near future.
-      </p>
-      <br />
-      <a href="cv.pdf">
-        <p class="cv">
-          CV / Resume
-          <img src="img/download-icon.svg" alt="">
-        </p>
-      </a>
-    </div>
-
-    <!------- Services ---------->
-
-    <div class="services">
-      <div class="services-img">
-        <img src="img/technologies.svg" alt="">
-      </div>
-      <div class="services-list">
-      <ul>
-        <li>HTML / CSS</li>
-        <li>JavaScript</li>
-        <li>Svelte</li>
-      </ul>
-      <ul>
-        <li>Node.js</li>
-        <li>Express</li>
-        <li>MongoDB</li>
-      </ul>
-    </div>
-    </div>
-
-    <div class="projects">
-      <div class="projects-title">
-        <a id="project">.</a>
-        <h2>PROJECTS</h2>
-      </div>
-
-      <!------- Build A-Dream ---------->
-      <div class="projects-container">
-        <div class="projects-container-row left">
-          <img src="img/build.png" alt="Build A-Dream website" />
-          <div class="overlay">
-            <a
-              target="_blank"
-              href="https://github.com/xfvelocity/build-a-dream"
-              >View Source <img src="img/document.svg" alt="">
-            <a href="https://builda-dream.com/"
-              >Live Demo <img src="img/next-arrow.svg" alt=""></a>
+      <section class="servicesSection" role="article">
+        <div class="services">
+          <div class="services-img">
+            <img src="img/technologies.svg" alt="">
+          </div>
+          <div class="services-list">
+            <ul>
+              <li>HTML / CSS</li>
+              <li>JavaScript</li>
+              <li>Svelte</li>
+            </ul>
+            <ul>
+              <li>Vue</li>
+              <li>Tailwind</li>
+              <li>Sass</li>
+            </ul>
           </div>
         </div>
+      </section>
 
-        <!------- HostingSolutions ---------->
-        <div class="projects-container-row right">
-          <img src="img/hostingsolutions.png" alt="Hosting Solutions website" />
-          <div class="overlay">
-            <a
-              target="_blank"
-              href=""
-              >View Source <img src="img/document.svg" alt=""></a>
-            <a href="/hostingsolutions"
-              >Live Demo <img src="img/next-arrow.svg" alt=""></a>
+      <div class="projects" role="article">
+        <section class="buildSection">
+            <div class="project buildadream">
+              <div class="project-img">
+                <a href="https://buildadream.co.uk/#/" aria-label="Build A-Dream website">
+                  <img src="img/build.png" alt="">
+                </a>
+              </div>
+              <div class="project-text">
+                <p class="project-subheading">Featured Website</p>
+                <h2>Build A-Dream</h2>
+                <p>Landscaping website made for a family member to promote their business and show off pictures of their work. Recently converted to use Vue.</p>
+                <a target="_blank"  href="https://github.com/xfvelocity/build-a-dream" aria-label="Github repo for Build A-Dream"><img src="img/github-icon.svg" alt=""></a>
+                <a href="https://buildadream.co.uk/#/" aria-label="Visit Build A-Dream"><img src="img/external.svg" alt=""></a>
+                <img title="Built with Vue" src="img/vue.png" alt="">
+              </div>
+            </div>
+          </section>
+          <section class="rpsSection grey">
+            <div class="project rps">
+              <div class="grey-img project-img">
+                <a href="https://alex-long.co.uk/rps/index.html" aria-label="Rock paper scissors project">
+                  <img src="img/rock-paper-scissors.png" alt="">
+                </a>
+              </div>
+              <div class="project-text">
+                <p class="project-subheading">Featured Project</p>
+                <h2>Rock, Paper, Scissors</h2>
+                <p>A simple rock paper scissors game made using vanilla JavaScript as a project to help me learn the fundamentals.</p>
+                <a target="_blank"  href="https://github.com/xfvelocity/rock-paper-scissors" aria-label="Github repo for Rock Paper Scissors"><img src="img/github-icon.svg" alt=""></a>
+                <a href="https://alex-long.co.uk/rps/index.html" aria-label="Visit Rock Paper Scissors"><img src="img/external.svg" alt=""></a>
+                <img title="Built with JavaScript" src="img/js.png" alt="">
+              </div>
+            </div>
+          </section>
+          <section class="hostingSection">
+            <div class="project hosting">
+              <div class="project-img ">
+                <a href="https://alex-long.co.uk/hostingsolutions" aria-label="HostingSolutions website">
+                  <img src="img/hostingsolutions.png" alt="">
+                </a>
+              </div>
+              <div class="project-text">
+                <p class="project-subheading">Featured Website</p>
+                <h2>HostingSolutions</h2>
+                <p>Web hosting website, currently creating more pages. This website has been through a range of major, changes currently on v3.0. </p>
+                <a target="_blank"  href="https://github.com/xfvelocity/hosting-solutions" aria-label="Github repo for HostingSolutions"><img src="img/github-icon.svg" alt=""></a>
+                <a href="https://alex-long.co.uk/hostingsolutions" aria-label="Visit Hosting Solutions"><img src="img/external.svg" alt=""></a>
+                <img title="Built with Sass" src="img/sass.png" alt="">
+              </div>
+            </div>
+          </section>
+          <section class="quizSection grey">
+            <div class="project quiz">
+              <div class="grey-img project-img">
+                <a href="https://alex-long.co.uk/quiz/index.html" aria-label="Spongebob quiz project">
+                  <img src="img/spongebob.png" alt="">
+                </a>
+              </div>
+              <div class="project-text">
+                <p class="project-subheading">Featured Project</p>
+                <h2>Spongebob Quiz</h2>
+                <p>An example of one of the projects I created using React, after originally creating it in JavaScript. Slightly outdated and not fully functional.</p>
+                <a target="_blank"  href="https://github.com/xfvelocity/react-quiz" aria-label="Github repo for Spongebob quiz"><img src="img/github-icon.svg" alt=""></a>
+                <a href="https://alex-long.co.uk/quiz/index.html" aria-label="Visit Spongebob quiz"><img src="img/external.svg" alt=""></a>
+                <img title="Built with React" src="img/react.png" alt="">
+              </div>
+            </div>
+        </section>
+      </div>
+      <section class="contactSection" role="article">
+        <div class="contact">
+          <div class="contactTitle">
+            <h2></h2>
+            <div class="contactUs">
+              <form
+                accept-charset="UTF-8"
+                action=""
+                method="POST"
+                class="contactusForm"
+              >
+                <fieldset>
+                  <label for="name">Name <span style="color: red">*</span></label>
+                  <input placeholder="John Smith" type="text" name="name" id="name" required disabled/>
+                  <br />
+                  <label for="email">Email <span style="color: red">*</span></label>
+                  <input placeholder="Johnsmith@gmail.com" type="text" name="email" id="email" required disabled/>
+                  <br />
+                  <label for="message">Message <span style="color: red">*</span></label>
+                  <textarea
+                    placeholder="Type your message here.."
+                    type="text"
+                    name="message"
+                    id="message"
+                    required
+                    disabled
+                  ></textarea>
+                  <br />
+                  <button class="submit" type="submit" disabled/>Submit</button>
+                </fieldset>
+              </form>
+            </div>
           </div>
         </div>
-
-      <!------- Rock Paper Scissors ---------->
-      <div class="projects-container-row left">
-        <img src="img/rock-paper-scissors.png" alt="Rock Paper Scissors project" />
-        <div class="overlay">
-          <a target="_blank" href="https://github.com/xfvelocity/rock-paper-scissors"
-            >View Source <img src="img/document.svg" alt=""></a>
-          <a href="rps/index.html"
-            >Live Demo <img src="img/next-arrow.svg" alt=""></a>
-        </div>
-      </div>
-
-        <!------- Spongebob Quiz ---------->
-        <div class="projects-container-row right">
-          <img src="img/spongebob.png" alt="Spongebob Quiz project" />
-          <div class="overlay">
-            <a target="_blank" href="https://github.com/xfvelocity/react-quiz"
-              >View Source <img src="img/document.svg" alt=""></a>
-            <a href="quiz/index.html"
-              >Live Demo <img src="img/next-arrow.svg" alt=""></a>
-          </div>
-        </div>
-      </div>
-      <p>
-        <em>* Currently working on these, so they may not work as intended</em>
-      </p>
-    </div>
-
-    <!-- ----- Contact us --------
-
-    <div class="contactusColor">
-      <div class="contactTitle">
-        <h2></h2>
-        <div class="contactUs">
-          <form
-            accept-charset="UTF-8"
-            action="https://usebasin.com/f/5d041ec64531"
-            method="POST"
-            class="contactusForm"
-          >
-            <fieldset>
-              <input placeholder="Name" type="text" name="Name" required disabled/>
-              <br />
-              <input placeholder="Email" type="text" name="Email" required disabled/>
-              <br />
-              <textarea
-                placeholder="Message"
-                type="text"
-                name="Message"
-                required
-                disabled
-              ></textarea>
-              <br />
-              <p><input type="submit" value="SUBMIT" disabled/></p>
-            </fieldset>
-          </form>
-        </div>
-      </div>
-    </div> -->
+      </section>
+    </main>
 
     <script src="js/script.js"></script>
   </body>

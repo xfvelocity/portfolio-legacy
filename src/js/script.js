@@ -1,63 +1,68 @@
-//* Animations
+const children = document.querySelectorAll('section')
 const about = document.querySelector('.about');
 const servicesImg = document.querySelector('.services-img');
 const servicesText = document.querySelector('.services-list');
-const projectsTitle = document.querySelector('.projects-title h2');
-const leftProject = document.querySelectorAll('.left');
-const rightProject = document.querySelectorAll('.right');
+const buildadream = document.querySelector('.buildadream');
+const rps = document.querySelector('.rps');
+const hosting = document.querySelector('.hosting');
+const quiz = document.querySelector('.quiz');
 
-//* Type out a message Animation
-// let t = 0;
-// const message = 'SEND A MESSAGE';
-// const contactTitle = document.querySelector('.contactTitle h2');
-// let programRan = false;
+let t = 0;
+const message = 'SEND A MESSAGE';
+const contactTitle = document.querySelector('.contactTitle h2');
+let programRan = false;
 
-// const typeWriter = type => {
-//   if (t < type.length) {
-//     contactTitle.innerHTML += type.charAt(t);
-//     t++;
-//     setTimeout(typeWriter, 40, type);
-//     programRan = true;
-//   }
-// };
+const typeWriter = type => {
+  if (t < type.length) {
+    contactTitle.innerHTML += type.charAt(t);
+    t++;
+    setTimeout(typeWriter, 40, type);
+    programRan = true;
+  }
+};
 
-about.style.display = 'none';
-servicesImg.style.display = 'none';
-for (let i = 0; i < leftProject.length; i++) {
-  leftProject[i].style.display = 'none';
-}
-for (let i = 0; i < rightProject.length; i++) {
-  rightProject[i].style.display = 'none';
+const options = {
+  threshold: .3
 }
 
-//* Play animation on page region
-window.addEventListener('scroll', () => {
-  if (window.pageYOffset > 160) {
-    about.style.display = '';
-    about.style.animation = '1.5s ease-in-out slideLeft forwards';
-  }
-  if (window.pageYOffset > 540) {
-    servicesImg.style.display = '';
-    servicesImg.style.animation = '1s ease-in-out up forwards';
-    servicesText.style.animation = '1s .3s ease-in-out up forwards';
-  }
-  if (window.pageYOffset > 1000) {
-    for (let i = 0; i < leftProject.length; i++) {
-      leftProject[i].style.display = '';
+const observer = new IntersectionObserver((entries, observer) => {
+  entries.forEach(entry => {
+    if(entry.isIntersecting) {
+      if(entry.target.classList.contains('aboutSection')) {
+      about.style.display = 'block';
+      about.style.animation = '1.5s ease-in-out slideLeft forwards';
+      }
+      if(entry.target.classList.contains('servicesSection')) {
+        servicesImg.style.display = 'flex';
+        servicesImg.style.animation = '1s ease-in-out up forwards';
+        servicesText.style.animation = '1s ease-in-out up forwards';
+      }
+      if(entry.target.classList.contains('buildSection')) {
+        buildadream.style.display = 'flex';
+        buildadream.style.animation = '1s ease-in-out forwards slideLeft';
+      }
+      if(entry.target.classList.contains('rpsSection')) {
+        rps.style.display = 'flex';
+        rps.style.animation = '1s ease-in-out forwards slideRight';
+      }
+      if(entry.target.classList.contains('hostingSection')) {
+        hosting.style.display = 'flex';
+        hosting.style.animation = '1s ease-in-out forwards slideLeft';
+      }
+      if(entry.target.classList.contains('quizSection')) {
+        quiz.style.display = 'flex';
+        quiz.style.animation = '1s ease-in-out forwards slideRight';
+      }
+      if(entry.target.classList.contains('contactSection')) {
+        if (!programRan) {
+          typeWriter(message);
+        } 
+      }
     }
+  })
+}, options);
 
-    for (let i = 0; i < rightProject.length; i++) {
-      rightProject[i].style.display = '';
-    }
-    projectsTitle.style.animation = '1s ease-in-out up forwards';
-    leftProject[0].style.animation = '1s ease-in-out forwards slideLeft';
-    rightProject[0].style.animation = '1s .25s ease-in-out forwards slideRight';
-    leftProject[1].style.animation = '1s .5s ease-in-out forwards slideLeft';
-    rightProject[1].style.animation = '1s .75s ease-in-out forwards slideRight';
-  }
-  if (window.pageYOffset > 1900) {
-    if (!programRan) {
-      typeWriter(message);
-    }
-  }
+children.forEach(child => {
+  observer.observe(child);
 });
+
