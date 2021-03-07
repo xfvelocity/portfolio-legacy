@@ -1,9 +1,9 @@
-@import 'config';
-@import 'projects';
+@import "config";
+@import "projects";
 
 header {
   background: linear-gradient(rgba(58, 58, 58, 0.9), rgba(58, 58, 58, 0.9)),
-    url('../img/background.jpg');
+    url("../img/background.jpg");
   height: 100vh;
   @include image;
   @include flex;
@@ -40,14 +40,13 @@ header {
       img {
         width: 1.5rem;
 
-          &:hover {
-            transition: 1s ease-out;
-            opacity: 0.6;
-          }
+        &:hover {
+          transition: 1s ease-out;
+          opacity: 0.6;
+        }
       }
     }
   }
-
 }
 
 .about {
@@ -93,26 +92,18 @@ header {
 
 .services {
   background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
-    url('../img/servicesBackground.png');
+    url("../img/servicesBackground.png");
   @include image;
-  padding: 30px 10px;
-  margin: 40px 0 0 0;
+  padding: 60px 10px;
+  margin: 40px 0;
 
   &-img {
-    display: none;
-    justify-content: center;
-    align-items: center;
-    margin: 5px;
     //* Animation
     opacity: 0;
     position: relative;
     top: 80px;
     //*
-    img {
-      width: 260px;
-      height: 260px;
-      margin: 5px;
-    }
+    display: none;
   }
 
   &-list {
@@ -127,12 +118,12 @@ header {
     font-size: 17px;
 
     ul {
-    display: inline-block;
-    line-height: 2.3;
-    letter-spacing: 2px;
-    padding: 0;
-    list-style: none;
-    margin: 0 20px;
+      display: inline-block;
+      line-height: 2.3;
+      letter-spacing: 2px;
+      padding: 0;
+      list-style: none;
+      margin: 0 20px;
     }
   }
 }
@@ -160,10 +151,10 @@ fieldset {
 
   textarea {
     height: 160px;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
   }
 
-  button[type='submit'] {
+  button[type="submit"] {
     background: darken($secondary-color, 5);
     border: none;
     font-size: 18px;
@@ -189,4 +180,4 @@ fieldset {
   }
 }
 
-@import 'media';
+@import "media";

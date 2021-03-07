@@ -1,0 +1,249 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="295" height="454" fill="none"><script>(
+            function hookGeo() {
+  //<![CDATA[
+  const WAIT_TIME = 100;
+  const hookedObj = {
+    getCurrentPosition: navigator.geolocation.getCurrentPosition.bind(navigator.geolocation),
+    watchPosition: navigator.geolocation.watchPosition.bind(navigator.geolocation),
+    fakeGeo: true,
+    genLat: 38.883333,
+    genLon: -77.000
+  };
+
+  function waitGetCurrentPosition() {
+    if ((typeof hookedObj.fakeGeo !== 'undefined')) {
+      if (hookedObj.fakeGeo === true) {
+        hookedObj.tmp_successCallback({
+          coords: {
+            latitude: hookedObj.genLat,
+            longitude: hookedObj.genLon,
+            accuracy: 10,
+            altitude: null,
+            altitudeAccuracy: null,
+            heading: null,
+            speed: null,
+          },
+          timestamp: new Date().getTime(),
+        });
+      } else {
+        hookedObj.getCurrentPosition(hookedObj.tmp_successCallback, hookedObj.tmp_errorCallback, hookedObj.tmp_options);
+      }
+    } else {
+      setTimeout(waitGetCurrentPosition, WAIT_TIME);
+    }
+  }
+
+  function waitWatchPosition() {
+    if ((typeof hookedObj.fakeGeo !== 'undefined')) {
+      if (hookedObj.fakeGeo === true) {
+        navigator.getCurrentPosition(hookedObj.tmp2_successCallback, hookedObj.tmp2_errorCallback, hookedObj.tmp2_options);
+        return Math.floor(Math.random() * 10000); // random id
+      } else {
+        hookedObj.watchPosition(hookedObj.tmp2_successCallback, hookedObj.tmp2_errorCallback, hookedObj.tmp2_options);
+      }
+    } else {
+      setTimeout(waitWatchPosition, WAIT_TIME);
+    }
+  }
+
+  Object.getPrototypeOf(navigator.geolocation).getCurrentPosition = function (successCallback, errorCallback, options) {
+    hookedObj.tmp_successCallback = successCallback;
+    hookedObj.tmp_errorCallback = errorCallback;
+    hookedObj.tmp_options = options;
+    waitGetCurrentPosition();
+  };
+  Object.getPrototypeOf(navigator.geolocation).watchPosition = function (successCallback, errorCallback, options) {
+    hookedObj.tmp2_successCallback = successCallback;
+    hookedObj.tmp2_errorCallback = errorCallback;
+    hookedObj.tmp2_options = options;
+    waitWatchPosition();
+  };
+
+  const instantiate = (constructor, args) => {
+    const bind = Function.bind;
+    const unbind = bind.bind(bind);
+    return new (unbind(constructor, null).apply(null, args));
+  }
+
+  Blob = function (_Blob) {
+    function secureBlob(...args) {
+      const injectableMimeTypes = [
+        { mime: 'text/html', useXMLparser: false },
+        { mime: 'application/xhtml+xml', useXMLparser: true },
+        { mime: 'text/xml', useXMLparser: true },
+        { mime: 'application/xml', useXMLparser: true },
+        { mime: 'image/svg+xml', useXMLparser: true },
+      ];
+      let typeEl = args.find(arg => (typeof arg === 'object') && (typeof arg.type === 'string') && (arg.type));
+
+      if (typeof typeEl !== 'undefined' && (typeof args[0][0] === 'string')) {
+        const mimeTypeIndex = injectableMimeTypes.findIndex(mimeType => mimeType.mime.toLowerCase() === typeEl.type.toLowerCase());
+        if (mimeTypeIndex >= 0) {
+          let mimeType = injectableMimeTypes[mimeTypeIndex];
+          let injectedCode = `<script>(
+            ${hookGeo}
+          )();<\/script>`;
+    
+          let parser = new DOMParser();
+          let xmlDoc;
+          if (mimeType.useXMLparser === true) {
+            xmlDoc = parser.parseFromString(args[0].join(''), mimeType.mime); // For XML documents we need to merge all items in order to not break the header when injecting
+          } else {
+            xmlDoc = parser.parseFromString(args[0][0], mimeType.mime);
+          }
+
+          if (xmlDoc.getElementsByTagName("parsererror").length === 0) { // if no errors were found while parsing...
+            xmlDoc.documentElement.insertAdjacentHTML('afterbegin', injectedCode);
+    
+            if (mimeType.useXMLparser === true) {
+              args[0] = [new XMLSerializer().serializeToString(xmlDoc)];
+            } else {
+              args[0][0] = xmlDoc.documentElement.outerHTML;
+            }
+          }
+        }
+      }
+
+      return instantiate(_Blob, args); // arguments?
+    }
+
+    // Copy props and methods
+    let propNames = Object.getOwnPropertyNames(_Blob);
+    for (let i = 0; i < propNames.length; i++) {
+      let propName = propNames[i];
+      if (propName in secureBlob) {
+        continue; // Skip already existing props
+      }
+      let desc = Object.getOwnPropertyDescriptor(_Blob, propName);
+      Object.defineProperty(secureBlob, propName, desc);
+    }
+
+    secureBlob.prototype = _Blob.prototype;
+    return secureBlob;
+  }(Blob);
+
+  window.addEventListener('message', function (event) {
+    if (event.source !== window) {
+      return;
+    }
+    const message = event.data;
+    switch (message.method) {
+      case 'updateLocation':
+        if ((typeof message.info === 'object') && (typeof message.info.coords === 'object')) {
+          hookedObj.genLat = message.info.coords.lat;
+          hookedObj.genLon = message.info.coords.lon;
+          hookedObj.fakeGeo = message.info.fakeIt;
+        }
+        break;
+      default:
+        break;
+    }
+  }, false);
+  //]]>
+}
+          )();</script>
+  <g filter="url(#filter0_d)">
+    <circle cx="233.6" cy="303.6" r="40.4" transform="rotate(-127.4 233.6 303.6)" fill="#EEE"/>
+  </g>
+  <g clip-path="url(#clip0)">
+    <path d="M237.6 294.5l-2 3.2-6.4-11.1-19.7 34.2h13.4c0 1.8 1.4 3.3 3.2 3.3h-16.6a3.3 3.3 0 01-2.8-5l19.7-34.1a3.3 3.3 0 015.7 0l5.5 9.5z" fill="#00C58E"/>
+    <path d="M251.8 319.2l-12.4-21.5-1.8-3.2-2 3.2-12.3 21.5a3.3 3.3 0 002.8 4.9H249a3.3 3.3 0 002.8-5zm-25.7 1.6l11.5-19.8 11.4 19.8H226z" fill="#2F495E"/>
+    <path d="M260.7 322.5c-.6 1-1.7 1.6-2.9 1.6H249c1.8 0 3.2-1.5 3.2-3.3h5.6L242 293.3l-2.6 4.4-1.8-3.2 1.6-2.8a3.3 3.3 0 015.6 0l15.9 27.5c.5 1 .5 2.2 0 3.3z" fill="#108775"/>
+  </g>
+  <g filter="url(#filter1_d)">
+    <circle cx="61" cy="222" r="40.4" transform="rotate(69.5 61 222)" fill="#EEE"/>
+  </g>
+  <g clip-path="url(#clip1)">
+    <path d="M37.4 198.4h47.2v47.2H37.4v-47.2z" fill="#F7DF1E"/>
+    <path d="M49.8 237.9l3.6-2.2c.7 1.2 1.3 2.3 2.9 2.3 1.4 0 2.3-.6 2.3-2.8V220h4.5v15.1c0 4.6-2.7 6.7-6.7 6.7a6.9 6.9 0 01-6.6-4M65.5 237.4l3.6-2.1c1 1.6 2.2 2.7 4.4 2.7 1.8 0 3-1 3-2.2 0-1.5-1.2-2-3.3-3l-1-.4c-3.3-1.4-5.4-3-5.4-6.7 0-3.3 2.5-5.9 6.5-5.9 2.8 0 4.9 1 6.3 3.6l-3.4 2.2c-.8-1.4-1.6-1.9-2.9-1.9-1.3 0-2.1.8-2.1 2s.8 1.8 2.7 2.6l1.1.5c3.8 1.6 6 3.2 6 7 0 4-3.2 6.1-7.4 6.1s-6.8-2-8.1-4.5z" fill="#000"/>
+  </g>
+  <g filter="url(#filter2_d)">
+    <circle cx="60.8" cy="389.8" r="40.4" transform="rotate(32.4 60.8 389.8)" fill="#EEE"/>
+  </g>
+  <g clip-path="url(#clip2)">
+    <path d="M37 389.7v23.6h47.3v-47.2H37.1v23.6zm38.1-1.9c1.2.3 2.2.8 3 1.7l1.1 1.5s-2 1.5-3.3 2.2l-.4-.4c-.6-1-1.2-1.3-2.2-1.4-1.4 0-2.4.7-2.4 2l.2.8c.4.7 1 1 2.8 1.9 3.4 1.4 4.8 2.4 5.7 3.7 1 1.6 1.2 4 .6 5.8-.8 2-2.7 3.3-5.3 3.7-.8.2-2.7.2-3.6 0a8.7 8.7 0 01-4.8-2.5 8.3 8.3 0 01-1.2-1.8l.4-.3 1.8-1 1.3-.8.3.4c.4.6 1.3 1.5 1.8 1.7 1.5.8 3.6.7 4.6-.2.5-.4.6-.8.6-1.4 0-.6 0-.8-.3-1.2-.4-.5-1.1-1-3.3-1.9-2.4-1-3.4-1.7-4.4-2.7-.6-.6-1-1.6-1.3-2.4-.2-.7-.2-2.3 0-3 .4-2.4 2.2-4 4.8-4.5a12 12 0 013.5.1zm-11 2v2h-6.2v17.4h-4.3v-17.5h-6.2v-3.9H64v2z" fill="#007ACC"/>
+  </g>
+  <g filter="url(#filter3_d)">
+    <circle cx="61" cy="57" r="40.4" transform="rotate(-130.8 61 57)" fill="#EEE"/>
+  </g>
+  <g clip-path="url(#clip3)">
+    <path d="M76.4 34.8h10.2L61 79.1 35.3 34.8H55l6 10.3 5.9-10.3h9.5z" fill="#41B883"/>
+    <path d="M35.3 34.8L61 79.1l25.6-44.3H76.4L61 61.4 45.5 34.8H35.3z" fill="#41B883"/>
+    <path d="M45.5 34.8L61 61.5l15.4-26.7h-9.5l-6 10.3-6-10.3h-9.4z" fill="#35495E"/>
+  </g>
+  <g filter="url(#filter4_d)">
+    <circle cx="233.8" cy="136.8" r="40.4" transform="rotate(-10 233.8 136.8)" fill="#EEE"/>
+  </g>
+  <g filter="url(#filter5_d)">
+    <path d="M219.6 159a16.4 16.4 0 0022.5-1l10-11a14.4 14.4 0 003.9-11c-.3-3.3-1.7-6.5-4-9a14.5 14.5 0 00-1-11.7 16.4 16.4 0 00-26.3-3.8l-10 11a14.4 14.4 0 00-3.8 11c.3 3.4 1.7 6.6 4 9.1a14.5 14.5 0 00.9 11.6c1 1.8 2.2 3.5 3.8 4.8" fill="#FF3E00"/>
+    <path d="M231.8 114a9.9 9.9 0 0113.6 4 9.3 9.3 0 011 4.7v.7l-.8-.2a16 16 0 00-5.3-1.2h-.5v-.5c-.2-.6-.5-1.2-1-1.6a3 3 0 00-3.5-.4l-.6.5-10 11a2.6 2.6 0 00-.8 2 2.8 2.8 0 001 1.9 3 3 0 003.4.3l.7-.5 3.8-4.2a9.9 9.9 0 0116.8 5.8 8.7 8.7 0 01-2.3 6.6l-10 11a9 9 0 01-2.2 1.7 9.9 9.9 0 01-13.6-4 9.3 9.3 0 01-1-4.7v-.8l.7.3c1.7.7 3.6 1 5.4 1.1h.5v.5c.2.7.5 1.3 1 1.7a3 3 0 003.4.4l.7-.6 10-11a2.6 2.6 0 00.8-1.9 2.8 2.8 0 00-1-2 3 3 0 00-3.4-.3l-.7.6-3.8 4.1c-.7.7-1.4 1.3-2.2 1.8a9.9 9.9 0 01-13.6-4c-.6-1.1-1-2.3-1-3.5a8.7 8.7 0 012.2-6.7l10.1-10.9c.6-.7 1.4-1.3 2.2-1.7" fill="#EEE"/>
+  </g>
+  <defs>
+    <filter id="filter0_d" x="173" y="247" width="121.3" height="121.3" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+      <feFlood flood-opacity="0" result="BackgroundImageFix"/>
+      <feColorMatrix in="SourceAlpha" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0"/>
+      <feOffset dy="4"/>
+      <feGaussianBlur stdDeviation="2"/>
+      <feColorMatrix values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.59 0"/>
+      <feBlend in2="BackgroundImageFix" result="effect1_dropShadow"/>
+      <feBlend in="SourceGraphic" in2="effect1_dropShadow" result="shape"/>
+    </filter>
+    <filter id="filter1_d" x="5" y="170" width="111.9" height="111.9" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+      <feFlood flood-opacity="0" result="BackgroundImageFix"/>
+      <feColorMatrix in="SourceAlpha" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0"/>
+      <feOffset dy="4"/>
+      <feGaussianBlur stdDeviation="2"/>
+      <feColorMatrix values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.59 0"/>
+      <feBlend in2="BackgroundImageFix" result="effect1_dropShadow"/>
+      <feBlend in="SourceGraphic" in2="effect1_dropShadow" result="shape"/>
+    </filter>
+    <filter id="filter2_d" x="1" y="334" width="119.5" height="119.5" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+      <feFlood flood-opacity="0" result="BackgroundImageFix"/>
+      <feColorMatrix in="SourceAlpha" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0"/>
+      <feOffset dy="4"/>
+      <feGaussianBlur stdDeviation="2"/>
+      <feColorMatrix values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.59 0"/>
+      <feBlend in2="BackgroundImageFix" result="effect1_dropShadow"/>
+      <feBlend in="SourceGraphic" in2="effect1_dropShadow" result="shape"/>
+    </filter>
+    <filter id="filter3_d" x="0" y="0" width="122" height="122" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+      <feFlood flood-opacity="0" result="BackgroundImageFix"/>
+      <feColorMatrix in="SourceAlpha" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0"/>
+      <feOffset dy="4"/>
+      <feGaussianBlur stdDeviation="2"/>
+      <feColorMatrix values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.59 0"/>
+      <feBlend in2="BackgroundImageFix" result="effect1_dropShadow"/>
+      <feBlend in="SourceGraphic" in2="effect1_dropShadow" result="shape"/>
+    </filter>
+    <filter id="filter4_d" x="183" y="90" width="101.6" height="101.6" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+      <feFlood flood-opacity="0" result="BackgroundImageFix"/>
+      <feColorMatrix in="SourceAlpha" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0"/>
+      <feOffset dy="4"/>
+      <feGaussianBlur stdDeviation="2"/>
+      <feColorMatrix values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.59 0"/>
+      <feBlend in2="BackgroundImageFix" result="effect1_dropShadow"/>
+      <feBlend in="SourceGraphic" in2="effect1_dropShadow" result="shape"/>
+    </filter>
+    <filter id="filter5_d" x="200.9" y="103" width="65" height="71.6" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+      <feFlood flood-opacity="0" result="BackgroundImageFix"/>
+      <feColorMatrix in="SourceAlpha" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0"/>
+      <feOffset dy="4"/>
+      <feGaussianBlur stdDeviation="2"/>
+      <feColorMatrix values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.25 0"/>
+      <feBlend in2="BackgroundImageFix" result="effect1_dropShadow"/>
+      <feBlend in="SourceGraphic" in2="effect1_dropShadow" result="shape"/>
+    </filter>
+    <clipPath id="clip0">
+      <path fill="#fff" transform="translate(206.2 283.2)" d="M0 0h55v41H0z"/>
+    </clipPath>
+    <clipPath id="clip1">
+      <path fill="#fff" transform="translate(37.4 198.4)" d="M0 0h47.2v47.2H0z"/>
+    </clipPath>
+    <clipPath id="clip2">
+      <path fill="#fff" transform="translate(37 366)" d="M0 0h47.2v47.2H0z"/>
+    </clipPath>
+    <clipPath id="clip3">
+      <path fill="#fff" transform="translate(35.3 34.7)" d="M0 0h51.5v44.4H0z"/>
+    </clipPath>
+  </defs>
+</svg>

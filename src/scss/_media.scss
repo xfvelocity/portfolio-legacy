@@ -17,10 +17,6 @@
     align-items: center;
     justify-content: center;
 
-    img {
-      width: 280px;
-      height: 280px;
-    }
     &-list {
       display: flex;
       margin-left: 50px;
@@ -30,6 +26,12 @@
 }
 
 @media (min-width: 1000px) {
+  .services {
+    &-img {
+      display: block;
+      max-width: 200px;
+    }
+  }
   .projects {
     &-container {
       display: flex;
