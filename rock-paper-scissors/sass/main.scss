@@ -1,0 +1,165 @@
+@import 'config';
+.notice {
+    background: rgb(85, 85, 85);
+    width: 100%;
+    text-align: center;
+    padding: 10px;
+    text-transform: none;
+    p {
+        margin: 0;
+    }
+}
+.heading {
+    border: 2px solid rgb(168, 168, 168);
+    width: 70%;
+    margin: 30px auto;
+    padding: 20px;
+    border-radius: 10px;
+    font-size: 18px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    color: rgb(233, 230, 230);
+
+    img {
+        width: 100px;
+    }
+
+    @include tablet-mode {
+        max-width: 400px;
+    }
+
+    .score-container {
+        display: flex;
+        margin: 10px 0;
+        .score {
+            background: white;
+            color: rgb(102, 102, 102);
+            width: 70px;
+            text-align: center;
+            padding: 5px;
+            border-radius: 4px;
+            height: 70px;
+            line-height: 1.2;
+            margin: 0 5px;
+
+            p {
+                margin: 0;
+            }
+
+            .score-heading {
+                font-size: 10px;
+                letter-spacing: 1.2px;
+                margin-top: 5px;
+            }
+
+            #playerOne,
+            #playerTwo {
+                font-size: 30px;
+                font-weight: 700;
+                letter-spacing: -3px;
+            }
+        }
+    }
+}
+
+.option-container {
+    display: flex;
+    flex-wrap: wrap;
+    width: 70%;
+    margin: 40px auto;
+    justify-content: center;
+    .option {
+        display: flex;
+        justify-content: center;
+        align-content: center;
+        background: #E1E0E1;
+        border-radius: 50%;
+        width: 120px;
+        padding: 20px 40px;
+        margin: 20px;
+        box-shadow: inset 0 0 10px #3b3b3b;
+        cursor: pointer;
+        z-index: 10;
+
+        img {
+            width: 40px;
+        }
+
+        &:hover {
+            transform: scale(1.05);
+        }
+
+        @include tablet-mode {
+            width: 165px;
+            padding: 30px;
+
+            img {
+                width: 60px;
+            }
+        }
+    }
+
+    .paper {
+        border: 12px $paper solid;
+    }
+
+    .scissors {
+        border: 12px $scissors solid;
+    }
+
+    .rock {
+        border: 12px $rock solid;
+    }
+}
+
+.chosenp-container {
+    @include flex;
+    justify-content: center;
+    p {
+        margin: 0;
+    }
+    #chosen-p {
+        text-align: center;
+        text-transform: none;
+        font-size: 20px;
+    }
+}
+
+.results {
+    text-align: center;
+    padding: 40px 0;
+
+    h2 {
+        font-size: 32px;
+        text-shadow: 2px 2px 4px #000;
+    }
+
+    a {
+        background: white;
+        padding: 15px 40px;
+        color: rgb(67, 68, 75);
+        border-radius: 10px;
+        font-weight: bold;
+        font-size: 20px;
+        cursor: pointer;
+
+        &:hover {
+            transform: scale(1.10);
+        }
+    }
+}
+
+@media (min-width: 860px) {
+    .container {
+        width: 70%;
+        margin: 10px auto;
+    }
+}
+
+@media (min-width: 1250px) {
+    .container {
+        width: 55%;
+    }
+}

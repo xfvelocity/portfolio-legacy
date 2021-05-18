@@ -1,0 +1,10 @@
+<svg width="1492" height="1355" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <g id="dots">
+    <path fill="#fff" d="M0 0h1492v1355H0z"/>
+    <path id="dotOne" d="M127 170.5a17.5 17.5 0 1035 0 17.5 17.5 0 00-35 0z" fill="#006572" fill-opacity=".1"/>
+    <path id="dotFive" d="M955 1303.5a17.5 17.5 0 1035 0 17.5 17.5 0 00-35 0z" fill="#006572" fill-opacity=".1"/>
+    <path id="dotTwo" d="M468 752.5a17.5 17.5 0 1035 0 17.5 17.5 0 00-35 0z" fill="#006572" fill-opacity=".1"/>
+    <path id="dotThree" d="M1131 327.9a17.5 17.5 0 1035 0 17.5 17.5 0 00-35 0z" fill="#006572" fill-opacity=".1"/>
+    <path id="dotFour" d="M1230 853.5a17.5 17.5 0 1035 0 17.5 17.5 0 00-35 0z" fill="#006572" fill-opacity=".1"/>
+  </g>
+</svg>

@@ -1,0 +1,117 @@
+$primary: #006572;
+$secondary: #3e3e3e;
+$bright-primary: #00fff0;
+
+html {
+  scroll-behavior: smooth;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: poppins, sans-serif;
+  line-height: 1.6;
+  margin: 0;
+  padding: 0;
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+}
+
+a {
+  color: black;
+  text-decoration: none;
+  &:hover {
+    opacity: 0.75;
+  }
+}
+
+button {
+  margin-top: 15px;
+  background: $primary;
+  border: none;
+  border-radius: 5px;
+  padding: 10px 15px;
+  font-size: 16px;
+  color: white;
+  cursor: pointer;
+  &:hover {
+    opacity: 0.9;
+  }
+}
+
+.primary {
+  color: $primary;
+}
+
+@import "nav";
+@import "footer";
+
+@import "homepage/header";
+@import "homepage/services";
+@import "homepage/about";
+@import "homepage/packages";
+@import "homepage/faq";
+@import "homepage/reviews";
+
+@import "blog/blogheader";
+@import "blog/bloglist";
+
+@import "contact";
+
+svg {
+  position: absolute;
+  width: 100%;
+  z-index: -10;
+
+  #dotOne,
+  #dotTwo {
+    transform-origin: 300px 300px;
+    animation: 500s ease-out dotOneAnimate infinite;
+  }
+
+  #dotThree {
+    transform-origin: 800px;
+    animation: 500s ease-out dotThreeAnimate infinite;
+  }
+
+  #dotFour {
+    transform-origin: 1200px;
+    animation: 500s ease-out dotFourAnimate infinite;
+  }
+}
+
+main {
+  background: url("../img/mobile-bg.svg") no-repeat center;
+  background-size: cover;
+  @media (min-width: 768px) {
+    background: url("../img/tablet-bg.svg") no-repeat;
+    background-size: cover;
+  }
+  @media (min-width: 1100px) {
+    background: url("../img/desktop-bg.svg") no-repeat;
+    background-size: cover;
+  }
+}
+
+@keyframes dotOneAnimate {
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes dotThreeAnimate {
+  100% {
+    transform: rotate(-360deg);
+  }
+}
+
+@keyframes dotFourAnimate {
+  100% {
+    transform: rotate(360deg);
+  }
+}

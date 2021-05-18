@@ -1,0 +1,94 @@
+.packagesContainer {
+  width: 100%;
+  background: url("../img/package-bg.svg") no-repeat right;
+  .packagesWrap {
+    width: 85%;
+    margin: 90px auto;
+  }
+  .packages-title {
+    text-align: center;
+    h3 {
+      margin: 5px 0;
+      font-size: 24px;
+    }
+    p {
+      max-width: 400px;
+      margin: 5px auto;
+    }
+  }
+  .packages {
+    margin: 50px 0;
+    .package {
+      background: #f6f6f6;
+      border: 1px solid #e0e0e0;
+      border-radius: 10px;
+      padding: 30px 45px;
+      width: 90%;
+      margin: 20px auto;
+      box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
+      max-width: 310px;
+      h4 {
+        font-size: 20px;
+        margin: 5px 0;
+        color: $secondary;
+      }
+      p {
+        margin: 0;
+        font-size: 30px;
+        font-weight: bold;
+        .small-month {
+          font-size: 16px;
+          font-weight: normal;
+        }
+      }
+      ul {
+        li {
+          display: flex;
+          align-items: center;
+          line-height: 1.9;
+          img {
+            margin-right: 5px;
+            width: 15px;
+          }
+        }
+      }
+      &-button {
+        text-align: center;
+        margin-top: 20px;
+      }
+    }
+    .ultimate {
+      z-index: 99;
+      background: white;
+      padding: 45px;
+    }
+  }
+  @media (min-width: 900px) {
+    .packagesWrap {
+      width: 90%;
+      margin: 140px auto;
+    }
+    .packages {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 60px 0;
+      .package {
+        max-width: 330px;
+        margin: 0;
+      }
+      .ultimate {
+        max-width: 350px;
+        margin: -20px;
+      }
+    }
+  }
+  @media (min-width: 1200px) {
+    margin-bottom: 200px;
+    .packages-title {
+      h3 {
+        font-size: 30px;
+      }
+    }
+  }
+}

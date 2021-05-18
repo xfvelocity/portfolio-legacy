@@ -1,0 +1,56 @@
+.services {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  width: 85%;
+  margin: 0 auto;
+  padding: 0;
+  max-width: 740px;
+  &-item {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    padding: 30px 0;
+    max-width: 260px;
+    margin: 0 auto;
+    img {
+      width: 80px;
+    }
+    h3 {
+      width: 100%;
+      text-align: center;
+      margin: 10px 0;
+      color: $primary;
+    }
+    p {
+      text-align: center;
+      font-size: 14px;
+      margin: 0;
+    }
+    @media (min-width: 768px) {
+      &:nth-child(even) {
+        margin-top: 80px;
+      }
+    }
+  }
+  @media (min-width: 1200px) {
+    .services {
+      &-item {
+        h3 {
+          font-size: 20px;
+          margin: 20px 0 10px 0;
+        }
+        p {
+          font-size: 16px;
+        }
+        img {
+          width: 90px;
+        }
+      }
+    }
+  }
+  @media (min-width: 1330px) {
+    max-width: 1250px;
+  }
+}

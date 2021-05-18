@@ -1,0 +1,39 @@
+.blog-list {
+  width: 80%;
+  margin: 60px auto;
+  display: flex;
+  flex-wrap: wrap;
+  max-width: 780px;
+  .blog-item {
+    width: 90%;
+    margin: 10px auto;
+    padding: 20px 0;
+    max-width: 350px;
+    img {
+      width: 100%;
+    }
+    &-text {
+      margin: 15px 0;
+      h3 {
+        margin: 0 0 10px 0;
+        font-size: 24px;
+        color: $primary;
+      }
+      p {
+        margin: 10px 0 15px;
+        font-size: 14px;
+      }
+      .date {
+        margin: 0;
+        font-size: 12px;
+      }
+    }
+  }
+  @media (min-width: 1380px) {
+    max-width: 1250px;
+    margin: 60px auto 100px auto;
+    .blog-item {
+      margin: 20px auto;
+    }
+  }
+}
