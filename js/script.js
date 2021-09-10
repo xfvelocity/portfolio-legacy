@@ -8,7 +8,7 @@ const hosting = document.querySelector(".hosting");
 const quiz = document.querySelector(".quiz");
 
 let t = 0;
-const message = "SEND A MESSAGE";
+const message = "FIND OUT MORE..";
 const contactTitle = document.querySelector(".contactTitle h2");
 let programRan = false;
 
