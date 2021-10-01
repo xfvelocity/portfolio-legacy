@@ -1,19 +1,5 @@
-# fullpage
+# Portfolio
 
-## Project setup
-```
-npm install
-```
+Live: https://alex-long.co.uk/
 
-### Compiles and hot-reloads for development
-```
-npm run serve
-```
-
-### Compiles and minifies for production
-```
-npm run build
-```
-
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
+A website to show off my skills and experience in Web Development. Frequently updated to show off projects or website I'm working on.
