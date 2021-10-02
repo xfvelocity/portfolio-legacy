@@ -2,9 +2,14 @@
   <v-app id="app">
     <full-page ref="fullpage" :options="options" id="fullpage">
       <div v-for="(page, i) in pages" :key="i" class="section">
-        <div>
-          <Nav :showName="page !== 'Home'" />
+        <div class="d-flex flex-wrap">
+          <Nav style="width: 100%" :showName="page !== 'Home'" />
           <component :is="page" />
+          <!-- <NextPage
+            :pages="pages"
+            :index="i"
+            @click="$refs.fullpage.api.moveSectionDown()"
+          /> -->
         </div>
       </div>
     </full-page>
@@ -18,6 +23,7 @@ import About from "./pages/about/About.vue";
 import Projects from "./pages/projects/Projects.vue";
 import Contact from "./pages/contact/Contact.vue";
 import Nav from "@/components/nav/Nav.vue";
+import NextPage from "@/components/next-page/NextPage.vue";
 
 @Component({
   components: {
@@ -26,6 +32,7 @@ import Nav from "@/components/nav/Nav.vue";
     Projects,
     Contact,
     Nav,
+    NextPage,
   },
 })
 export default class App extends Vue {
@@ -39,21 +46,21 @@ export default class App extends Vue {
 body {
   margin: 0;
   padding: 0;
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6,
+  p,
+  a {
+    color: white;
+  }
 }
 
 #app {
   background: url("./assets/bg.png") !important;
   font-family: "Poppins", sans-serif;
-}
-
-h1,
-h2,
-h3,
-h4,
-h5,
-h6,
-p,
-a {
-  color: white;
 }
 </style>
