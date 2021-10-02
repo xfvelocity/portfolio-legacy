@@ -1,5 +1,5 @@
 <template>
-  <nav class="pa-4 d-flex align-center">
+  <nav class="pa-6 d-flex align-center">
     <h3 v-if="showName" style="font-weight: 600">Alex Long</h3>
     <v-spacer></v-spacer>
     <div class="d-flex">

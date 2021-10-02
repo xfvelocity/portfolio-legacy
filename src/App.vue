@@ -2,7 +2,7 @@
   <v-app id="app">
     <full-page ref="fullpage" :options="options" id="fullpage">
       <div v-for="(page, i) in pages" :key="i" class="section">
-        <div class="d-flex flex-wrap">
+        <div>
           <Nav style="width: 100%" :showName="page !== 'Home'" />
           <component :is="page" />
           <!-- <NextPage
@@ -40,6 +40,16 @@ export default class App extends Vue {
   options: any = {
     anchors: ["home", "about", "projects", "contact"],
   };
+
+  mounted(): void {
+    let width: number = 0;
+    width = window.innerWidth;
+    this.$store.commit("setScreenWidth", width);
+    window.addEventListener("resize", () => {
+      width = window.innerWidth;
+      this.$store.commit("setScreenWidth", width);
+    });
+  }
 }
 </script>
 <style lang="scss">
