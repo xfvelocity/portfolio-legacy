@@ -2,8 +2,10 @@
   <v-app id="app">
     <full-page ref="fullpage" :options="options" id="fullpage">
       <div v-for="(page, i) in pages" :key="i" class="section">
-        <Nav :showName="page !== 'Home'" />
-        <component :is="page" />
+        <div>
+          <Nav :showName="page !== 'Home'" />
+          <component :is="page" />
+        </div>
       </div>
     </full-page>
   </v-app>
