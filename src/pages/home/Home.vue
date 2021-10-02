@@ -1,6 +1,5 @@
 <template>
   <div id="home">
-    <Nav />
     <h1>Alex Long</h1>
     <span>
       <h3>front end</h3>
@@ -11,13 +10,8 @@
  
 <script lang="ts">
 import { Component, Vue } from "vue-property-decorator";
-import Nav from "@/components/nav/Nav.vue";
 
-@Component({
-  components: {
-    Nav,
-  },
-})
+@Component
 export default class Home extends Vue {}
 </script>
 <style lang="scss">

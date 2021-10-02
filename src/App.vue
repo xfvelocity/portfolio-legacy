@@ -2,6 +2,7 @@
   <v-app id="app">
     <full-page ref="fullpage" :options="options" id="fullpage">
       <div v-for="(page, i) in pages" :key="i" class="section">
+        <Nav :showName="page !== 'Home'" />
         <component :is="page" />
       </div>
     </full-page>
@@ -14,6 +15,7 @@ import Home from "./pages/home/Home.vue";
 import About from "./pages/about/About.vue";
 import Projects from "./pages/projects/Projects.vue";
 import Contact from "./pages/contact/Contact.vue";
+import Nav from "@/components/nav/Nav.vue";
 
 @Component({
   components: {
@@ -21,6 +23,7 @@ import Contact from "./pages/contact/Contact.vue";
     About,
     Projects,
     Contact,
+    Nav,
   },
 })
 export default class App extends Vue {
