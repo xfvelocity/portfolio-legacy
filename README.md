@@ -1,5 +1,3 @@
 # Portfolio
 
-Live: https://alex-long.co.uk/
-
-A website to show off my skills and experience in Web Development. Frequently updated to show off projects or website I'm working on.
+Original Portfolio - No longer maintained as it's been replaced with https://github.com/xfvelocity/vue-portfolio
